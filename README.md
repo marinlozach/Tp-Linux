@@ -34,11 +34,11 @@ On peut ping 1.1.1.1
 
 On peut ping ynov.com
 
-    marin@node1:~$ ping 192.168.56.116
-    PING 192.168.56.116 (192.168.56.116) 56(84) bytes of data.
-    64 bytes from 192.168.56.116: icmp_seq=1 ttl=64 time=0.130 ms
-    64 bytes from 192.168.56.116: icmp_seq=2 ttl=64 time=0.079 ms
-    64 bytes from 192.168.56.116: icmp_seq=3 ttl=64 time=0.073 ms
+    marin@node1:~$ ping 192.168.61.201
+    PING 192.168.61.201 (192.168.61.201) 56(84) bytes of data.
+    64 bytes from 192.168.61.201: icmp_seq=1 ttl=64 time=0.130 ms
+    64 bytes from 192.168.61.201: icmp_seq=2 ttl=64 time=0.079 ms
+    64 bytes from 192.168.61.201: icmp_seq=3 ttl=64 time=0.073 ms
     --- 192.168.56.116 ping statistics ---
     3 packets transmitted, 3 received, 0% packet loss, time 2031ms
     rtt min/avg/max/mdev = 0.073/0.094/0.130/0.025 ms
