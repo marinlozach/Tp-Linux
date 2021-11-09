@@ -1,7 +1,5 @@
 # TP 2 : Manipuler des services.
 
----
-
 **Intro :**
 
 **➜ Nommer la machine :**
@@ -21,7 +19,7 @@
     3 packets transmitted, 3 received, 0% packet loss, time 2894ms
     rtt min/avg/max/mdev = 42.275/46.816/49.737/7.215 ms
 
-On peut ping 1.1.1.1
+On ping 1.1.1.1
 
     marin@node1:~$ ping ynov.com
     PING ynov.com (92.243.16.143) 56(84) bytes of data.
@@ -32,7 +30,7 @@ On peut ping 1.1.1.1
     3 packets transmitted, 3 received, 0% packet loss, time 2893ms
     rtt min/avg/max/mdev = 39.850/40.284/40.714/1.372 ms
 
-On peut ping ynov.com
+On ping ynov.com
 
     marin@node1:~$ ping 192.168.61.201
     PING 192.168.61.201 (192.168.61.201) 56(84) bytes of data.
@@ -43,7 +41,7 @@ On peut ping ynov.com
     3 packets transmitted, 3 received, 0% packet loss, time 2031ms
     rtt min/avg/max/mdev = 0.073/0.094/0.130/0.025 ms
 
-On peut ping la machine 
+On ping la machine 
 
 
 **SSH :**
@@ -171,7 +169,7 @@ On à les permitions d'ecrire via filezilla.
     marin@node1:~$ sudo cat /var/log/vsftpd.log
     Mon Nov  8 16:05:37 2021 [pid 2231] [marin] OK UPLOAD: Client "::ffff:192.168.61.201", "/home/marin/test tp2.txt", 0.00Kbyte/sec
 
-Le fichier text à donc bien été upload et download.
+Le fichier text à été upload et download.
 
 **➜ Modification de la configuration serveur :**
 
