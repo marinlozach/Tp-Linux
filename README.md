@@ -2,13 +2,13 @@
 
 **Intro :**
 
-**➜ Nommer la machine :**
+*➜ Nommer la machine :*
 
     marin@marin:~$ sudo hostname node1.tp1.linux
     marin@node1:~$ hostname
     node1.tp1.linux
 
-**➜Configuration réseaux :**
+*➜Configuration réseaux :*
 
     marin@node1:~$ ping 1.1.1.1
     PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
@@ -46,11 +46,11 @@ On ping la machine
 
 **SSH :**
 
-**➜ Installation :**
+*➜ Installation :*
 
     marin@node1:~$ sudo apt install openssh-server
 
-**➜ Lancement du service ssh :**
+*➜ Lancement du service ssh :*
 
     marin@node1:~$ systemctl start sshd
     marin@node1:~$ systemctl status sshd
@@ -72,7 +72,7 @@ On ping la machine
     nov. 05 13:52:54 node1.tp2.linux sshd[1830]: Accepted password for arthur from 192.168.56.1 port 61759 ssh2
     nov. 05 13:52:54 node1.tp2.linux sshd[1830]: pam_unix(sshd:session): session opened for user arthur by (uid=0)
 
-**➜ Etude du service SSH:**
+*➜ Etude du service SSH:*
 
     marin@node1:~$ ps -aux | grep sshd
     root         578  0.0  0.5  12184  5104 ?        Ss   13:51   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
@@ -93,7 +93,7 @@ On se connecte au serveur en SSH
     marin@192.168.61.201's password:
     marin@node1:~$
 
-**➜ Modification de la configuration du serveur :**
+*➜ Modification de la configuration du serveur :*
 
     marin@node1:~$ cd /etc/ssh
     marin@node1:/etc/ssh$ cat sshd_config
@@ -126,15 +126,15 @@ Pour se connecter au serveur SSH :
 
 **FTP :**
 
-**➜ Installation du serveur :**
+*➜ Installation du serveur :*
 
     marin@node1:~$ sudo apt install vsftpd
 
-**➜ Lancement du service FTP :**
+*➜ Lancement du service FTP :*
 
     marin@node1:~$ systemctl start vsftpd
 
-**➜ Etude du service FTP :**
+*➜ Etude du service FTP :*
 
     marin@node1:~$ systemctl status vsftpd
     ● vsftpd.service - vsftpd FTP server
@@ -159,7 +159,7 @@ Pour se connecter au serveur SSH :
     nov. 08 14:55:56 node1.tp1.linux sudo[2567]:   marin : TTY=pts/0 ; PWD=/home/marin ; USER=root ; COMMAND=/usr/bin/apt install vsftpd
     marin@node1:~$ sudo cat /var/log/vsftpd.log
 
-**➜ Upload et Download :** 
+*➜ Upload et Download :*
 
     marin@node1:~$ sudo nano /etc/vsftpd.conf
     write_enable=YES
@@ -171,7 +171,7 @@ On à les permitions d'ecrire via filezilla.
 
 Le fichier text à été upload et download.
 
-**➜ Modification de la configuration serveur :**
+*➜ Modification de la configuration serveur :*
 
     marin@node1:~$ sudo nano /etc/vsftpd.conf
     listen_port=33450
@@ -189,7 +189,7 @@ Je me connecter au FTP avec le new port.
 
 **Création de votre propre service :**
 
-**➜ Jouer avec NetCat**
+*➜ Jouer avec NetCat*
 
 Sur mon pc :
 
@@ -206,7 +206,7 @@ Les deux peuvent maintenant discuter :
     marin@node1:~$ nc -l 7564
     Hello
 
-**➜ Un service basé sur NetCat :**
+*➜ Un service basé sur NetCat :*
 
     marin@node1:~$ sudo nano /etc/systemd/system/chat_tp2.service
         [Unit]
@@ -219,7 +219,7 @@ Les deux peuvent maintenant discuter :
         WantedBy=multi-user.target
     chmod 777 /etc/systemd/system/chat_tp2.service
 
-**Test test et retest :**
+*Test :*
 
     marin@node1:~$ systemctl start chat_tp2.service
     marin@node1:~$ systemctl status chat_tp2
