@@ -1,8 +1,8 @@
 [Unit]
-Description="Youtube DL Service"
+Description="Youtube Download Service"
 
 [Service]
-ExecStart=sudo bash /srv/yt/yt-v2.sh
+ExecStart=sudo bash /srv/youtube/youtubev2.sh
 
 [Install]
 WantedBy=multi-user.target
