@@ -46,14 +46,14 @@
            └─856 /usr/sbin/sshd -D -oCiphers=aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes128-ctr,aes128-cbc -o>
 
     Nov 24 14:28:37 localhost.localdomain sshd[1696]: pam_unix(sshd:session): session closed for user marin
-    Nov 24 14:30:22 localhost.localdomain sshd[1731]: Accepted password for marin from 10.200.1.1 port 53043 ssh2
+    Nov 24 14:30:22 localhost.localdomain sshd[1731]: Accepted password for marin from 193.168.56.37 port 53043 ssh2
     Nov 24 14:36:22 localhost.localdomain sshd[1731]: pam_unix(sshd:session): session opened for user marin by (uid=0)
-    Nov 24 14:47:43 localhost.localdomain sshd[1796]: Accepted password for marin from 10.200.1.1 port 54918 ssh2
+    Nov 24 14:47:43 localhost.localdomain sshd[1796]: Accepted password for marin from 193.168.56.37 port 54918 ssh2
     Nov 24 14:47:43 localhost.localdomain sshd[1796]: pam_unix(sshd:session): session opened for user marin by (uid=0)
     Nov 24 14:47:43 localhost.localdomain sshd[1796]: pam_unix(sshd:session): session closed for user marin
-    Nov 24 14:53:09 localhost.localdomain sshd[1839]: Accepted publickey for marin from 10.200.1.1 port 54947 ssh2: RSA SHA256:vQUXPx3n13x4+6HrpvJ7tmHjhgwhEWws3vK77JNgigc
+    Nov 24 14:53:09 localhost.localdomain sshd[1839]: Accepted publickey for marin from 193.168.56.37 port 54947 ssh2: RSA SHA256:vQUXPx3n13x4+6HrpvJ7tmHjhgwhEWws3vK77JNgigc
     Nov 24 14:53:09 localhost.localdomain sshd[1839]: pam_unix(sshd:session): session opened for user marin by (uid=0)
-    Nov 24 15:06:00 node1.tp4.linux sshd[1908]: Accepted publickey for marin from 10.200.1.1 port 50180 ssh2: RSA SHA256:vQUXPx3n13x4+6HrpvJ7tmHjhgwhEWws3vK77JNgigc
+    Nov 24 15:06:00 node1.tp4.linux sshd[1908]: Accepted publickey for marin from 193.168.56.37 port 50180 ssh2: RSA SHA256:vQUXPx3n13x4+6HrpvJ7tmHjhgwhEWws3vK77JNgigc
     Nov 24 15:06:00 node1.tp4.linux sshd[1908]: pam_unix(sshd:session): session opened for user marin by (uid=0)
     
 *Connexion à la VM via powershell*
@@ -61,7 +61,7 @@
     C:\Users\marin>ssh marin@192.168.56.37 -p 22
     Activate the web console with: systemctl enable --now cockpit.socket
 
-    Last login: Tue Nov 23 13:06:56 2021 from 10.200.1.1
+    Last login: Tue Nov 23 13:06:56 2021 from 193.168.56.37
     [marin@node1 ~]$
 
 *Sur ma VM*
