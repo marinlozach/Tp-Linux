@@ -2,7 +2,7 @@
 
 **Check list**
 
-* Définir une IP à la VM
+* Définir une IP à la VM *
 
     [marin@node1 ~]$ cat /etc/sysconfig/network-    scripts/ifcfg-enp0s8
     BOOTPROTO=static
@@ -31,7 +31,7 @@
         inet6 fe80::a00:27ff:fea9:a5d1/64 scope link
             valid_lft forever preferred_lft forever
 
-* Connexion SSH
+* Connexion SSH *
 
     [marin@node1 ~]$ sudo systemctl status sshd
     ● sshd.service - OpenSSH server daemon
@@ -56,7 +56,7 @@
     Nov 24 15:06:00 node1.tp4.linux sshd[1908]: Accepted publickey for marin from 10.200.1.1 port 50180 ssh2: RSA SHA256:vQUXPx3n13x4+6HrpvJ7tmHjhgwhEWws3vK77JNgigc
     Nov 24 15:06:00 node1.tp4.linux sshd[1908]: pam_unix(sshd:session): session opened for user marin by (uid=0)
     
-* Connexion à la VM via powershell
+* Connexion à la VM via powershell *
     
     C:\Users\marin>ssh marin@192.168.56.37 -p 22
     Activate the web console with: systemctl enable --now cockpit.socket
@@ -64,13 +64,13 @@
     Last login: Tue Nov 23 13:06:56 2021 from 10.200.1.1
     [marin@node1 ~]$
 
-* Sur ma VM
+* Sur ma VM *
 
     [marin@node1 .ssh]$ cat authorized_keys
 
     ssh-rsa AAAABtreCP282EAAAADAQABAAACAQC3GN+mp62lXGJJ90DTpgbsDua0kNudlL8EZbSqjfDAVEa9wtWnuCR2JOvCWfqONcBmh+pA2MA9SUHd5dhezGNtijg6WRqV9b+xAgtoVmEgQd6z8MLiw/ZkHENW4pf/JqXRLkigvyjq2YOWAb7MYmfBpuQz/UbdHQaToH66U8C2lZc1Vf8b8ZP0EBYFLwiWt0zPraY/7tFGKbj0/StvoAxN43y0kdSpcgejRNrXdAZh3+nj+d0K5qpB2OW+MetA49+h/qkNyH1lDMKjgNSAgCpVL2Zo2W1YlKVgdcCRPv5K72kDodBhJO27kPjy3pbXVJ22aE6QLUuKXqb2HuiB67WlQ+FQDAsXno7tlDz2Oor4tFftAACVa4mYmOJxWkLbqcrr9Wi2nZqbd+2oKJwgzHyadsaegJbZTjpZwA/0oFD5YRroUZI8QEphNsTO/VH9gjq3HuC7Gu1KOMf3gy5Zt/Ofecu2+3moE0Uq8SKN0nwSpidLKDSHvImhp9ErtdmgSBNaCE5T31U+SPPHufHNowqiBbY+F0qzlz0uQAEK4NQx23yCOP/AbeGuWg9hhWunSpPSbN8TWHUnW6gA4UXJYjBid+HK1hEecSOjaZQewht6u6aGnmUxj4KWAcHuceLmmgIw3RHJDaiY/ExdTLM9aAdrEWJ13u2ZdJY8glX+zOwXtw== marin@DESKTOP-LBR4JUU
     
-* Prouvé l'accès à internet
+* Prouvé l'accès à internet *
 
     [marin@node1]$ ping 3 8.8.8.8
     PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
@@ -91,7 +91,7 @@
     3 packets transmitted, 3 received, 0% packet loss, time 2004ms
     rtt min/avg/max/mdev = 37.538/37.979/38.292/0.320     ms
     
-* Nommage de la machine
+* Nommage de la machine *
 
     [marin@node1]$ cat /etc/hostname
     node1.tp4.linux
@@ -100,7 +100,7 @@
 
 **Mettre en place un service**
 
-* Installation NGINX
+* Installation NGINX *
     [marin@node1]$ sudo dnf install nginx
     [...]
     Complete!
@@ -144,7 +144,7 @@
     -rw-r--r--. 1 root root  368 Jun 10 11:09 nginx-logo.png
     -rw-r--r--. 1 root root 1800 Jun 10 11:09 poweredby.png
     
-* Visite du service web
+* Visite du service web *
 
     [marin@node1 ~]$ sudo firewall-cmd --add-port=80/tcp --permanent
     success
@@ -156,7 +156,7 @@
 
 **Modification de la configuration du serveur web**
 
-* Changer le port d'écoute
+* Changer le port d'écoute *
 
     [marin@node1 ~]$ sudo nano /etc//nginx/nginx.conf
         server {
@@ -203,7 +203,7 @@
     [marin@node1 ~]$ curl http://192.168.56.37:8080
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
     
-* Changer l'utilisateur qui lance le service
+* Changer l'utilisateur qui lance le service *
 
     [marin@node1 ~]$ sudo useradd web -m -s /bin/bash -u 2120
     
@@ -218,7 +218,7 @@
     user web;
     web      31417  0.0  0.9 151820  7988 ?        S    14:46   0:00 nginx: worker process
     
-* Changer l'emplacement de la racine web
+* Changer l'emplacement de la racine web *
 
     [marin@node1 var]$ sudo mkdir www
     [marin@node1 var]$ cd www/
