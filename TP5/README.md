@@ -5,6 +5,7 @@
 *install maria db sur la machine*
     ```sudo dnf install mariadb-server
     [...]
-    Complete!```
+    Complete!
+    ```
 
 
