@@ -25,3 +25,17 @@ marinlo+   26218  0.0  0.1 221928  1156 pts/0    S+   13:38   0:00 grep --color=
 "Le processus est lancé par l'user marinlozach
 ```
 *Firewall :*
+```
+sudo firewall-cmd --add-port=80/tcp --permanent
+Success!
+sudo firewall-cmd --reload
+Success!
+"On vérifie"
+sudo firewall-cmd --list-all
+ports: 80/tcp
+```
+
+**Conf MariaDB**
+
+*Configuration élémentaire de la base*
+```
