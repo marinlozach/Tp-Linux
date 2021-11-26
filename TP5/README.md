@@ -1,6 +1,6 @@
-#Setup DB 
+#Setup DB :
 
-**Install MariaDB**
+**Install MariaDB :**
 
 *install maria db sur la machine*
     ```sudo dnf install mariadb-server
