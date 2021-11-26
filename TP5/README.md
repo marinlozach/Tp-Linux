@@ -3,9 +3,8 @@
 **Install MariaDB :**
 
 *install maria db sur la machine*
-    ```sudo dnf install mariadb-server
-    [...]
-    Complete!
-    ```
-
-
+```sudo dnf install mariadb-server
+[...]
+Complete!
+```
+*Le service MariaDB*
